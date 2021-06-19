@@ -12,6 +12,11 @@ yarn
 quasar dev
 ```
 
+### Start nodejs
+```bash
+npm start
+```
+
 ### Lint the files
 ```bash
 yarn run lint
