@@ -2,23 +2,39 @@
   <q-page>
     <div class="q-pa-md row q-gutter-md justify-center">
       <note-card
-        v-for="x in [1,2,3,4]"
-        :key="x"
+        v-for="note in notes"
+        :key="note.id"
       >
       </note-card>
     </div>
     <!-- <div absolute-center> -->
-      <q-btn round id="add" color="primary" icon="shopping_cart" />  
+      <q-btn round id="add" color="primary" icon="shopping_cart" @click="$router.push('new')" />  
     <!-- </div>   -->
   </q-page>
 </template>
 
 <script>
-console.log(`${process.env.DB_host}`)
 import NoteCard from 'components/NoteCard.vue'
 
 export default {  
   name: 'PageIndex',
+  data() {
+    return {
+      notes: []
+    }
+  },
+  method: {
+    getNotes() {
+      axios.get(`${API_URL}`).then((response) => {
+        this.notes = response;
+      }).catch((e) => {
+
+      });
+    }
+  },
+  created() {
+
+  },
   components: { NoteCard },  
 }
 </script>
