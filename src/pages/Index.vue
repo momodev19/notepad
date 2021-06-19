@@ -1,15 +1,24 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page>
+    <div class="q-pa-md row q-gutter-md justify-center">
+      <note-card
+        v-for="x in [1,2,3,4]"
+        :key="x"
+      >
+      </note-card>
+    </div>
+    <!-- <div absolute-center> -->
+      <q-btn round id="add" color="primary" icon="shopping_cart" />  
+    <!-- </div>   -->
   </q-page>
 </template>
 
 <script>
-export default {
-  name: 'PageIndex'
+console.log(`${process.env.DB_host}`)
+import NoteCard from 'components/NoteCard.vue'
+
+export default {  
+  name: 'PageIndex',
+  components: { NoteCard },  
 }
 </script>
