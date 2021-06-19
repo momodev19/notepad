@@ -23,17 +23,17 @@ export default {
       notes: []
     }
   },
-  method: {
+  methods: {
     getNotes() {
-      axios.get(`${API_URL}`).then((response) => {
-        this.notes = response;
+      this.$axios.get('/notes').then((res) => {
+        this.notes = res.data;
       }).catch((e) => {
 
       });
     }
   },
   created() {
-
+    this.getNotes();
   },
   components: { NoteCard },  
 }
