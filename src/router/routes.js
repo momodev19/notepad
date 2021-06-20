@@ -7,6 +7,9 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'new', component: () => import('pages/New.vue') },
       // { path: 'note/:id', component: () => import('pages/Note.vue') }
+
+      // register/login
+      { path: 'register', component: () => import('pages/security/Register.vue') },
     ]
   },
 

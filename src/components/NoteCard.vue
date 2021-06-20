@@ -27,7 +27,7 @@ export default {
     }
   },
   created() {
-      console.log(this.notes)
+    //   console.log(this.notes)
   }
 }
 </script>
